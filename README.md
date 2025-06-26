@@ -98,6 +98,11 @@ pip install -e ".[dev]"
 pytest
 ```
 
+## Output
+
+![image](https://github.com/user-attachments/assets/d2536089-c521-426a-b8f5-f8133bd41e51)
+
+
 ## License
 
 MIT
