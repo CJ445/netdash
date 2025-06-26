@@ -1,0 +1,19 @@
+Source: netdash
+Section: admin
+Priority: optional
+Maintainer: User <user@example.com>
+Build-Depends: debhelper (>= 10), dh-python, python3-all, python3-setuptools
+Standards-Version: 4.1.2
+X-Python3-Version: >= 3.8
+
+Package: netdash
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}, python3-rich, python3-psutil, python3-textual
+Description: Network monitoring and system log dashboard
+ A modular Linux terminal tool similar to htop, but focused on
+ real-time network activity, user login monitoring, and log-based alerts.
+ .
+ Features:
+  * Real-time network statistics per interface
+  * Current and recent user login tracking
+  * System log monitoring with alerts for security events

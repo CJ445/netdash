@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=netdash
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	dh_auto_install
+	# Create directory for the executable
+	mkdir -p $(CURDIR)/debian/netdash/usr/bin/
+	# Create a wrapper script
+	echo '#!/bin/sh' > $(CURDIR)/debian/netdash/usr/bin/netdash
+	echo 'exec python3 -m netdash "$$@"' >> $(CURDIR)/debian/netdash/usr/bin/netdash
+	chmod 755 $(CURDIR)/debian/netdash/usr/bin/netdash
+
+override_dh_python3:
+	dh_python3 --shebang=/usr/bin/python3
